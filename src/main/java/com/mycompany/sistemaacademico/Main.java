@@ -98,7 +98,7 @@ public class Main {
                                 actualizarAsignatura();
                                 break;
                             case 5:
-                                System.out.println("Eliminar asignatura...");
+                                eliminarAsignatura();
                                 break;
                             case 6:
                                 System.out.println("Volviendo al menu principal...");
@@ -351,5 +351,20 @@ public class Main {
     asignaturaEncontrada.setDocente(docente);
 
     System.out.println("Asignatura actualizada correctamente...");
+}
+        
+        public static void eliminarAsignatura() {
+    System.out.print("\nIngrese el codigo de la asignatura a eliminar: ");
+    String codigo = sc.next();
+
+    for (int i = 0; i < asignaturas.size(); i++) {
+        if (asignaturas.get(i).getCodigo().equals(codigo)) {
+            asignaturas.remove(i);
+            System.out.println("Asignatura eliminada correctamente.");
+            return;
+        }
+    }
+
+    System.out.println("Asignatura no encontrada.");
 }
 }
