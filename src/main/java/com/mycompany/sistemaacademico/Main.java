@@ -89,10 +89,10 @@ public class Main {
                                 registrarAsignatura();
                                 break;
                             case 2:
-                                System.out.println("Listar asignaturas...");
+                                listarAsignaturas();
                                 break;
                             case 3:
-                                System.out.println("Buscar asignatura...");
+                                buscarAsignatura();
                                 break;
                             case 4:
                                 System.out.println("Actualizar asignatura...");
@@ -287,5 +287,33 @@ public class Main {
     asignaturas.add(nueva);
 
     System.out.println("Asignatura registrada correctamente...");
+}    
+    
+        public static void listarAsignaturas() {
+    System.out.println("\n--- LISTA DE Asignaturas ---");
+
+    if (asignaturas.isEmpty()) {
+        System.out.println("No hay asignaturas registradas.");
+        return;
+    }
+
+    for (Asignatura a : asignaturas) {
+        System.out.println(a);
+    }
+}
+        
+        public static void buscarAsignatura() {
+    System.out.print("\nIngrese el codigo de la asignatura a buscar: ");
+    String codigo = sc.nextLine();
+
+    for (Asignatura a : asignaturas) {
+        if (a.getCodigo().equals(codigo)) {
+            System.out.println("Asignatura encontrada:");
+            System.out.println(a);
+            return;
+        }
+    }
+
+    System.out.println("Asignatura no encontrada...");
 }    
 }
