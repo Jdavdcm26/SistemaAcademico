@@ -60,7 +60,7 @@ public class Main {
                                 actualizarEstudiante();
                                 break;
                             case 5:
-                                System.out.println("Eliminar estudiante...");
+                                eliminarEstudiante();
                                 break;
                             case 6:
                                 System.out.println("Volviendo al menu principal...");
@@ -248,5 +248,19 @@ public class Main {
     estudianteEncontrado.setSemestre(semestre);
 
     System.out.println("Estudiante actualizado correctamente.");
+}
+        public static void eliminarEstudiante() {
+    System.out.print("\nIngrese el código del estudiante a eliminar: ");
+    String codigo = sc.next();
+
+    for (int i = 0; i < estudiantes.size(); i++) {
+        if (estudiantes.get(i).getCodigo().equals(codigo)) {
+            estudiantes.remove(i);
+            System.out.println("Estudiante eliminado correctamente.");
+            return;
+        }
+    }
+
+    System.out.println("Estudiante no encontrado.");
 }
 }
