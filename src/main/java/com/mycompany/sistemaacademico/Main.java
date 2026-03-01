@@ -57,7 +57,7 @@ public class Main {
                                 buscarEstudiante();
                                 break;
                             case 4:
-                                System.out.println("Actualizar estudiante...");
+                                actualizarEstudiante();
                                 break;
                             case 5:
                                 System.out.println("Eliminar estudiante...");
@@ -209,5 +209,44 @@ public class Main {
     }
 
     System.out.println("Estudiante no encontrado.");
+}
+        public static void actualizarEstudiante() {
+    System.out.print("\nIngrese el código del estudiante a actualizar: ");
+    String codigo = sc.next();
+
+    estudiante estudianteEncontrado = null;
+
+    for (estudiante e : estudiantes) {
+        if (e.getCodigo().equals(codigo)) {
+            estudianteEncontrado = e;
+            break;
+        }
+    }
+
+    if (estudianteEncontrado == null) {
+        System.out.println("Estudiante no encontrado.");
+        return;
+    }
+
+    sc.nextLine(); 
+
+    System.out.print("Nuevo nombre: ");
+    String nombre = sc.nextLine();
+
+    System.out.print("Nuevo apellido: ");
+    String apellido = sc.nextLine();
+
+    System.out.print("Nueva edad: ");
+    int edad = sc.nextInt();
+
+    System.out.print("Nuevo semestre: ");
+    int semestre = sc.nextInt();
+
+    estudianteEncontrado.setNombre(nombre);
+    estudianteEncontrado.setApellido(apellido);
+    estudianteEncontrado.setEdad(edad);
+    estudianteEncontrado.setSemestre(semestre);
+
+    System.out.println("Estudiante actualizado correctamente.");
 }
 }
