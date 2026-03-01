@@ -51,10 +51,10 @@ public class Main {
                                 registrarEstudiante();
                                 break;
                             case 2:
-                                System.out.println("Listar estudiantes...");
+                                listarEstudiantes();
                                 break;
                             case 3:
-                                System.out.println("Buscar estudiante...");
+                                buscarEstudiante();
                                 break;
                             case 4:
                                 System.out.println("Actualizar estudiante...");
@@ -182,5 +182,32 @@ public class Main {
     estudiantes.add(nuevo);
 
     System.out.println("Estudiante registrado correctamente.");
+}
+       
+        public static void listarEstudiantes() {
+    System.out.println("\n--- LISTA DE ESTUDIANTES ---");
+
+    if (estudiantes.isEmpty()) {
+        System.out.println("No hay estudiantes registrados.");
+        return;
+    }
+
+    for (estudiante e : estudiantes) {
+        System.out.println(e);
+    }
+}
+        public static void buscarEstudiante() {
+    System.out.print("\nIngrese el ID del estudiante a buscar: ");
+    String id = sc.nextLine();
+
+    for (estudiante e : estudiantes) {
+        if (e.getCodigo().equals(id)) {
+            System.out.println("Estudiante encontrado:");
+            System.out.println(e);
+            return;
+        }
+    }
+
+    System.out.println("Estudiante no encontrado.");
 }
 }
