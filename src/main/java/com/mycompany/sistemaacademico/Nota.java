@@ -13,4 +13,51 @@ public class Nota {
     private Asignatura asignatura;
     private double Valor;
     private String periodo;  
+    
+    public Nota(){}
+    
+    public Nota(estudiante estudiante, Asignatura asignatura, double valor, String periodo){
+        this.estudiate = estudiante;
+        this.asignatura = asignatura;
+        this.Valor = valor;
+        this.periodo = periodo;
+    }
+
+    public estudiante getEstudiate() {
+        return estudiate;
+    }
+
+    public void setEstudiate(estudiante estudiate) {
+        this.estudiate = estudiate;
+    }
+
+    public Asignatura getAsignatura() {
+        return asignatura;
+    }
+
+    public void setAsignatura(Asignatura asignatura) {
+        this.asignatura = asignatura;
+    }
+
+    public double getValor() {
+        return Valor;
+    }
+
+    public void setValor(double Valor) {
+        this.Valor = Valor;
+    }
+
+    public String getPeriodo() {
+        return periodo;
+    }
+
+    public void setPeriodo(String periodo) {
+        this.periodo = periodo;
+    }
+    
+    
+    
+    
+    
+    
 }
