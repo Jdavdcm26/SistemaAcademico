@@ -95,7 +95,7 @@ public class Main {
                                 buscarAsignatura();
                                 break;
                             case 4:
-                                System.out.println("Actualizar asignatura...");
+                                actualizarAsignatura();
                                 break;
                             case 5:
                                 System.out.println("Eliminar asignatura...");
@@ -315,5 +315,41 @@ public class Main {
     }
 
     System.out.println("Asignatura no encontrada...");
-}    
+} 
+        
+        public static void actualizarAsignatura() {
+    System.out.print("\nIngrese el codigo de la asignatura a actualizar: ");
+    String codigo = sc.next();
+
+    Asignatura asignaturaEncontrada = null;
+
+    for (Asignatura a : asignaturas) {
+        if (a.getCodigo().equals(codigo)) {
+            asignaturaEncontrada = a;
+            break;
+        }
+    } 
+     if (asignaturaEncontrada == null) {
+        System.out.println("Asignatura no encontrada...");
+        return;
+    }
+
+    sc.nextLine(); 
+
+    System.out.print("Nuevo nombre: ");
+    String nombre = sc.nextLine();
+
+    System.out.print("Nuevos creditos: ");
+    int creditos = sc.nextInt();
+    sc.nextLine();
+    
+    System.out.print("Nuevo docente: ");
+    String docente = sc.nextLine();
+
+    asignaturaEncontrada.setNombre(nombre);
+    asignaturaEncontrada.setCreditos(creditos);
+    asignaturaEncontrada.setDocente(docente);
+
+    System.out.println("Asignatura actualizada correctamente...");
+}
 }
