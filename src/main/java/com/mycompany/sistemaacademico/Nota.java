@@ -54,6 +54,14 @@ public class Nota {
     public void setPeriodo(String periodo) {
         this.periodo = periodo;
     }
+
+    @Override
+    public String toString() {
+        return "Nota{" + "estudiate=" + estudiate + "\n" +
+               ", asignatura=" + asignatura + "\n" +
+               ", Valor=" + Valor + "\n" +
+               ", periodo=" + periodo + '}';
+    }
     
     
     
