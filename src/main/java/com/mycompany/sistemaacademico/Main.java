@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Main {
     
         static ArrayList <estudiante> estudiantes= new ArrayList<>();
-        static ArrayList <Asignatura> Asignaturas= new ArrayList<>();
+        static ArrayList <Asignatura> asignaturas= new ArrayList<>();
         static ArrayList <Nota> notas= new ArrayList<>();
         static Scanner sc = new Scanner(System.in);
     
@@ -86,7 +86,7 @@ public class Main {
 
                         switch (opcionSecundaria) {
                             case 1:
-                                System.out.println("Crear asignatura...");
+                                registrarAsignatura();
                                 break;
                             case 2:
                                 System.out.println("Listar asignaturas...");
@@ -267,4 +267,25 @@ public class Main {
 
     System.out.println("Estudiante no encontrado.");
 }
+    public static void registrarAsignatura() {
+    System.out.println("\n--- REGISTRAR Asignatura ---");
+
+    System.out.print("Codigo: ");
+    String codigo = sc.nextLine();
+
+    System.out.print("Nombre: ");
+    String nombre = sc.nextLine();
+    
+    System.out.print("Creditos: ");
+    int creditos = sc.nextInt();
+    sc.nextLine();
+    
+    System.out.print("Docente: ");
+    String docente = sc.nextLine();
+    
+    Asignatura nueva = new Asignatura(codigo, nombre, creditos, docente);
+    asignaturas.add(nueva);
+
+    System.out.println("Asignatura registrada correctamente...");
+}    
 }
