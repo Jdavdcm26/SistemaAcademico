@@ -174,9 +174,11 @@ public class Main {
     
     System.out.print("Edad: ");
     int edad = sc.nextInt();
+    sc.nextLine();
     
     System.out.print("Semestre: ");
     int semestre = sc.nextInt();
+    sc.nextLine();
     
     estudiante nuevo = new estudiante(id, nombre, apellido,edad,semestre);
     estudiantes.add(nuevo);
@@ -238,9 +240,11 @@ public class Main {
 
     System.out.print("Nueva edad: ");
     int edad = sc.nextInt();
+    sc.nextLine();
 
     System.out.print("Nuevo semestre: ");
     int semestre = sc.nextInt();
+    sc.nextLine();
 
     estudianteEncontrado.setNombre(nombre);
     estudianteEncontrado.setApellido(apellido);
