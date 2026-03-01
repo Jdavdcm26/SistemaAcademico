@@ -48,7 +48,7 @@ public class Main {
 
                         switch (opcionSecundaria) {
                             case 1:
-                                System.out.println("Crear estudiante...");
+                                registrarEstudiante();
                                 break;
                             case 2:
                                 System.out.println("Listar estudiantes...");
@@ -160,5 +160,27 @@ public class Main {
 
         sc.close();
     }
+        public static void registrarEstudiante() {
+    System.out.println("\n--- REGISTRAR ESTUDIANTE ---");
+
+    System.out.print("ID: ");
+    String id = sc.nextLine();
+
+    System.out.print("Nombre: ");
+    String nombre = sc.nextLine();
+
+    System.out.print("Apellido: ");
+    String apellido = sc.nextLine();
     
+    System.out.print("Edad: ");
+    int edad = sc.nextInt();
+    
+    System.out.print("Semestre: ");
+    int semestre = sc.nextInt();
+    
+    estudiante nuevo = new estudiante(id, nombre, apellido,edad,semestre);
+    estudiantes.add(nuevo);
+
+    System.out.println("Estudiante registrado correctamente.");
+}
 }
