@@ -57,10 +57,11 @@ public class Nota {
 
     @Override
     public String toString() {
-        return "Nota{" + "estudiate=" + estudiante + "\n" +
-               ", asignatura=" + asignatura + "\n" +
-               ", Valor=" + Valor + "\n" +
-               ", periodo=" + periodo + '}';
+        return
+               "Estudiante: " + estudiante.getNombre() + " " +estudiante.getApellido() + "\n" +
+               "Asignatura: " + asignatura.getNombre() + "\n" +
+               "Nota: " + Valor + "\n" +
+               "Periodo: " + periodo;
     }
     
     

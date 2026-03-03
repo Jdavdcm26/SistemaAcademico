@@ -414,7 +414,7 @@ public class Main {
             Nota nuevaNota = new Nota(estEncontrado, asigEncontrada, valor, periodo);
             notas.add(nuevaNota);
 
-            System.out.println("Nota registrada correctamente.");
+            System.out.println("\nNota registrada correctamente.");
 }
         
         public static void listarNotas() {
@@ -425,7 +425,7 @@ public class Main {
             }
             System.out.println("--LISTA DE NOTAS--");
             for (Nota n : notas) {
-                System.out.println(n);
+                System.out.println("\n"+n);
                
 
             }
@@ -446,8 +446,8 @@ public class Main {
                 if (n.getEstudiante().getCodigo().equalsIgnoreCase(codEst) &&
                     n.getAsignatura().getCodigo().equalsIgnoreCase(codAsig)) {
 
-                    System.out.println("Nota encontrada:");
-                    System.out.println(n);
+                    System.out.println("\nNota encontrada:");
+                    System.out.println("\n"+n);
                     
 
                     encontrada = true;
@@ -483,7 +483,7 @@ public class Main {
 
                     n.setValor(nuevaNota);
 
-                    System.out.println("Nota actualizada correctamente.");
+                    System.out.println("\nNota actualizada correctamente.");
                     encontrada = true;
                     break;
                 }
@@ -512,7 +512,7 @@ public class Main {
                     n.getAsignatura().getCodigo().equalsIgnoreCase(codAsig)) {
 
                     notas.remove(i);
-                    System.out.println("Nota eliminada correctamente.");
+                    System.out.println("\nNota eliminada correctamente.");
                     eliminada = true;
                     break;
                 }
