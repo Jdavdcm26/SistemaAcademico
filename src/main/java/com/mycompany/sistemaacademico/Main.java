@@ -133,7 +133,7 @@ public class Main {
                                 buscarNota();
                                 break;
                             case 4:
-                                System.out.println("Actualizar nota...");
+                                actualizarNota();
                                 break;
                             case 5:
                                 System.out.println("Eliminar nota...");
@@ -463,6 +463,41 @@ public class Main {
                 System.out.println("No se encontró la nota.");
             }
         }
+        
+        public static void actualizarNota() {
+
+            System.out.print("Ingrese nombre del estudiante: ");
+            String nombreEst = sc.nextLine();
+
+            System.out.print("Ingrese nombre de la asignatura: ");
+            String nombreAsig = sc.nextLine();
+
+            boolean encontrada = false;
+
+            for (Nota n : notas) {
+
+                if (n.getEstudiante().getNombre().equalsIgnoreCase(nombreEst) &&
+                    n.getAsignatura().getNombre().equalsIgnoreCase(nombreAsig)) {
+
+                    System.out.println("Nota actual: " + n.getValor());
+
+                    System.out.print("Ingrese nueva nota: ");
+                    double nuevaNota = sc.nextDouble();
+                    sc.nextLine();
+
+                    n.setValor(nuevaNota);
+
+                    System.out.println("Nota actualizada correctamente.");
+                    encontrada = true;
+                    break;
+                }
+            }
+
+            if (!encontrada) {
+                System.out.println("No se encontró la nota.");
+            }
+}
+
 
         
         
