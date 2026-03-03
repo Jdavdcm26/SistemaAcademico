@@ -124,7 +124,7 @@ public class Main {
 
                         switch (opcionSecundaria) {
                             case 1:
-                                System.out.println("Registrar nota...");
+                                registrarNota();
                                 break;
                             case 2:
                                 System.out.println("Listar notas...");
@@ -367,4 +367,55 @@ public class Main {
 
     System.out.println("Asignatura no encontrada.");
 }
+        
+        public static void registrarNota() {
+
+            System.out.println("\n--- REGISTRAR NOTA ---");
+
+            System.out.print("ESTUDIANTE: ");
+            String nombreIngresado = sc.nextLine();
+
+            System.out.print("ASIGNATURA: ");
+            String asignaturaIngresada = sc.nextLine();
+
+            estudiante estEncontrado = null;
+            Asignatura asigEncontrada = null;
+
+            for (estudiante e : estudiantes) {
+                if (e.getNombre().equalsIgnoreCase(nombreIngresado)) {
+                    estEncontrado = e;
+                    break;
+                }
+            }
+
+            for (Asignatura a : asignaturas) {
+                if (a.getNombre().equalsIgnoreCase(asignaturaIngresada)) {
+                    asigEncontrada = a;
+                    break;
+                }
+            }
+
+            if (estEncontrado == null || asigEncontrada == null) {
+                System.out.println("Estudiante o asignatura no existen.");
+                return;
+            }
+
+            System.out.print("VALOR: ");
+            double valor = Double.parseDouble(sc.nextLine());
+
+            if (valor < 0 || valor > 5) {
+                System.out.println("Valor inválido. Debe estar entre 0 y 5.");
+                return;
+            }
+
+            System.out.print("PERIODO: ");
+            String periodo = sc.nextLine();
+
+            Nota nuevaNota = new Nota(estEncontrado, asigEncontrada, valor, periodo);
+            notas.add(nuevaNota);
+
+            System.out.println("Nota registrada correctamente.");
+}
+        
+        
 }
