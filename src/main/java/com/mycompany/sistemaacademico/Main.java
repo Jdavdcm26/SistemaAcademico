@@ -372,24 +372,24 @@ public class Main {
 
             System.out.println("\n--- REGISTRAR NOTA ---");
 
-            System.out.print("ESTUDIANTE: ");
-            String nombreIngresado = sc.nextLine();
+           System.out.print("CODIGO ESTUDIANTE: ");
+            String codigoEst = sc.nextLine();
 
-            System.out.print("ASIGNATURA: ");
-            String asignaturaIngresada = sc.nextLine();
+            System.out.print("CODIGO ASIGNATURA: ");
+            String codigoAsig = sc.nextLine();
 
             estudiante estEncontrado = null;
             Asignatura asigEncontrada = null;
 
             for (estudiante e : estudiantes) {
-                if (e.getNombre().equalsIgnoreCase(nombreIngresado)) {
+                if (e.getCodigo().equalsIgnoreCase(codigoEst)) {
                     estEncontrado = e;
                     break;
                 }
             }
 
             for (Asignatura a : asignaturas) {
-                if (a.getNombre().equalsIgnoreCase(asignaturaIngresada)) {
+                if (a.getCodigo().equalsIgnoreCase(codigoAsig)) {
                     asigEncontrada = a;
                     break;
                 }
@@ -423,36 +423,32 @@ public class Main {
                 System.out.println("No hay notas registradas");
                 return;
             }
-
-            System.out.println("===== LISTA DE NOTAS =====");
-
+            System.out.println("--LISTA DE NOTAS--");
             for (Nota n : notas) {
-                System.out.println("Estudiante: " + n.getEstudiante().getNombre());
-                System.out.println("Asignatura: " + n.getAsignatura().getNombre());
-                System.out.println("Nota: " + n.getValor());
-                System.out.println("---------------------------");
+                System.out.println(n);
+               
+
             }
         }
 
         public static void buscarNota() {
 
-            System.out.print("Ingrese nombre del estudiante: ");
-            String nombreEst = sc.nextLine();
+            System.out.print("Ingrese codigo del estudiante: ");
+            String codEst = sc.nextLine();
 
-            System.out.print("Ingrese nombre de la asignatura: ");
-            String nombreAsig = sc.nextLine();
+            System.out.print("Ingrese codigo de la asignatura: ");
+            String codAsig = sc.nextLine();
 
             boolean encontrada = false;
 
             for (Nota n : notas) {
 
-                if (n.getEstudiante().getNombre().equalsIgnoreCase(nombreEst) &&
-                    n.getAsignatura().getNombre().equalsIgnoreCase(nombreAsig)) {
+                if (n.getEstudiante().getCodigo().equalsIgnoreCase(codEst) &&
+                    n.getAsignatura().getCodigo().equalsIgnoreCase(codAsig)) {
 
                     System.out.println("Nota encontrada:");
-                    System.out.println("Estudiante: " + n.getEstudiante().getNombre());
-                    System.out.println("Asignatura: " + n.getAsignatura().getNombre());
-                    System.out.println("Nota: " + n.getValor());
+                    System.out.println(n);
+                    
 
                     encontrada = true;
                     break;
@@ -466,18 +462,18 @@ public class Main {
         
         public static void actualizarNota() {
 
-            System.out.print("Ingrese nombre del estudiante: ");
-            String nombreEst = sc.nextLine();
+            System.out.print("Ingrese codigo del estudiante: ");
+            String codEst = sc.nextLine();
 
-            System.out.print("Ingrese nombre de la asignatura: ");
-            String nombreAsig = sc.nextLine();
+            System.out.print("Ingrese codigo de la asignatura: ");
+            String codAsig = sc.nextLine();
 
             boolean encontrada = false;
 
             for (Nota n : notas) {
 
-                if (n.getEstudiante().getNombre().equalsIgnoreCase(nombreEst) &&
-                    n.getAsignatura().getNombre().equalsIgnoreCase(nombreAsig)) {
+                if (n.getEstudiante().getCodigo().equalsIgnoreCase(codEst) &&
+                    n.getAsignatura().getCodigo().equalsIgnoreCase(codAsig)) {
 
                     System.out.println("Nota actual: " + n.getValor());
 
@@ -500,11 +496,11 @@ public class Main {
 
          public static void eliminarNota() {
 
-            System.out.print("Ingrese nombre del estudiante: ");
-            String nombreEst = sc.nextLine();
+            System.out.print("Ingrese codigo del estudiante: ");
+            String codEst = sc.nextLine();
 
-            System.out.print("Ingrese nombre de la asignatura: ");
-            String nombreAsig = sc.nextLine();
+            System.out.print("Ingrese codigo de la asignatura: ");
+            String codAsig = sc.nextLine();
 
             boolean eliminada = false;
 
@@ -512,8 +508,8 @@ public class Main {
 
                 Nota n = notas.get(i);
 
-                if (n.getEstudiante().getNombre().equalsIgnoreCase(nombreEst) &&
-                    n.getAsignatura().getNombre().equalsIgnoreCase(nombreAsig)) {
+                if (n.getEstudiante().getCodigo().equalsIgnoreCase(codEst) &&
+                    n.getAsignatura().getCodigo().equalsIgnoreCase(codAsig)) {
 
                     notas.remove(i);
                     System.out.println("Nota eliminada correctamente.");
