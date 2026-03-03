@@ -136,7 +136,7 @@ public class Main {
                                 actualizarNota();
                                 break;
                             case 5:
-                                System.out.println("Eliminar nota...");
+                                eliminarNota();
                                 break;
                             case 6:
                                 System.out.println("Volviendo al menu principal...");
@@ -498,6 +498,34 @@ public class Main {
             }
 }
 
+         public static void eliminarNota() {
+
+            System.out.print("Ingrese nombre del estudiante: ");
+            String nombreEst = sc.nextLine();
+
+            System.out.print("Ingrese nombre de la asignatura: ");
+            String nombreAsig = sc.nextLine();
+
+            boolean eliminada = false;
+
+            for (int i = 0; i < notas.size(); i++) {
+
+                Nota n = notas.get(i);
+
+                if (n.getEstudiante().getNombre().equalsIgnoreCase(nombreEst) &&
+                    n.getAsignatura().getNombre().equalsIgnoreCase(nombreAsig)) {
+
+                    notas.remove(i);
+                    System.out.println("Nota eliminada correctamente.");
+                    eliminada = true;
+                    break;
+                }
+            }
+
+            if (!eliminada) {
+                System.out.println("No se encontró la nota.");
+            }
+}
 
         
         
