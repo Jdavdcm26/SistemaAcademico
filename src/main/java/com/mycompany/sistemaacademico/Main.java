@@ -127,10 +127,10 @@ public class Main {
                                 registrarNota();
                                 break;
                             case 2:
-                                System.out.println("Listar notas...");
+                                listarNotas();
                                 break;
                             case 3:
-                                System.out.println("Buscar nota...");
+                                buscarNota();
                                 break;
                             case 4:
                                 System.out.println("Actualizar nota...");
@@ -416,6 +416,54 @@ public class Main {
 
             System.out.println("Nota registrada correctamente.");
 }
+        
+        public static void listarNotas() {
+
+            if (notas.isEmpty()) {
+                System.out.println("No hay notas registradas");
+                return;
+            }
+
+            System.out.println("===== LISTA DE NOTAS =====");
+
+            for (Nota n : notas) {
+                System.out.println("Estudiante: " + n.getEstudiante().getNombre());
+                System.out.println("Asignatura: " + n.getAsignatura().getNombre());
+                System.out.println("Nota: " + n.getValor());
+                System.out.println("---------------------------");
+            }
+        }
+
+        public static void buscarNota() {
+
+            System.out.print("Ingrese nombre del estudiante: ");
+            String nombreEst = sc.nextLine();
+
+            System.out.print("Ingrese nombre de la asignatura: ");
+            String nombreAsig = sc.nextLine();
+
+            boolean encontrada = false;
+
+            for (Nota n : notas) {
+
+                if (n.getEstudiante().getNombre().equalsIgnoreCase(nombreEst) &&
+                    n.getAsignatura().getNombre().equalsIgnoreCase(nombreAsig)) {
+
+                    System.out.println("Nota encontrada:");
+                    System.out.println("Estudiante: " + n.getEstudiante().getNombre());
+                    System.out.println("Asignatura: " + n.getAsignatura().getNombre());
+                    System.out.println("Nota: " + n.getValor());
+
+                    encontrada = true;
+                    break;
+                }
+            }
+
+            if (!encontrada) {
+                System.out.println("No se encontró la nota.");
+            }
+        }
+
         
         
 }

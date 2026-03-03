@@ -9,7 +9,7 @@ package com.mycompany.sistemaacademico;
  * @author angel
  */
 public class Nota {
-    private estudiante estudiate; //cambiar nombre de clase a "Estudiante" -> e = E
+    private estudiante estudiante; //cambiar nombre de clase a "Estudiante" -> e = E
     private Asignatura asignatura;
     private double Valor;
     private String periodo;  
@@ -17,18 +17,18 @@ public class Nota {
     public Nota(){}
     
     public Nota(estudiante estudiante, Asignatura asignatura, double valor, String periodo){
-        this.estudiate = estudiante;
+        this.estudiante = estudiante;
         this.asignatura = asignatura;
         this.Valor = valor;
         this.periodo = periodo;
     }
 
-    public estudiante getEstudiate() {
-        return estudiate;
+    public estudiante getEstudiante() {
+        return estudiante;
     }
 
-    public void setEstudiate(estudiante estudiate) {
-        this.estudiate = estudiate;
+    public void setEstudiante(estudiante estudiante) {
+        this.estudiante = estudiante;
     }
 
     public Asignatura getAsignatura() {
@@ -57,7 +57,7 @@ public class Nota {
 
     @Override
     public String toString() {
-        return "Nota{" + "estudiate=" + estudiate + "\n" +
+        return "Nota{" + "estudiate=" + estudiante + "\n" +
                ", asignatura=" + asignatura + "\n" +
                ", Valor=" + Valor + "\n" +
                ", periodo=" + periodo + '}';
